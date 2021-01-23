@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import ContactForm from './ContactForm';
+import { Link } from 'react-router-dom';
 
 Contact.propTypes = {
 
@@ -37,18 +38,18 @@ function Contact(props) {
                                             <i class="fas fa-envelope"></i>
                                         </div>
                                         <span>Email</span>
-                                        <a href="#"><span class="__cf_email__"
-                                            data-cfemail="ea8f9c85869e8baa8f878b8386c4898587">[email&#160;protected]</span></a>
-                                        <a href="#"><span class="__cf_email__"
-                                            data-cfemail="bbdddac3fbded6dad2d795d8d4d6">[email&#160;protected]</span></a>
+                                        <Link><span class="__cf_email__"
+                                            data-cfemail="ea8f9c85869e8baa8f878b8386c4898587">[email&#160;protected]</span></Link>
+                                        <Link><span class="__cf_email__"
+                                            data-cfemail="bbdddac3fbded6dad2d795d8d4d6">[email&#160;protected]</span></Link>
                                     </li>
                                     <li>
                                         <div class="icon">
                                             <i class="fas fa-phone-volume"></i>
                                         </div>
                                         <span>Phone</span>
-                                        <a href="#">+44 587 154756</a>
-                                        <a href="#">+55 5555 14574</a>
+                                        <Link>+44 587 154756</Link>
+                                        <Link>+55 5555 14574</Link>
                                     </li>
                                 </ul>
                             </div>

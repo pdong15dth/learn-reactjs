@@ -25,6 +25,7 @@ const App = () => {
   return (
     <div className="App">
       <Switch>
+        <Route path="/" component={XHomePage} exact />
         <Route path="/trang-chu.html" component={XHomePage} exact />
         <Route path="/gioi-thieu.html" component={AboutPage} exact />
         <Route path="/lien-he.html" component={ContactPage} exact />
