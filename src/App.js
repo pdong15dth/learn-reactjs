@@ -1,24 +1,38 @@
-import logo from './logo.svg';
-import './App.css';
+// import './App.css';
+import AboutPage from 'features/AboutPage';
+import ContactPage from 'features/ContactPage';
+import XHomePage from 'features/XHomePage';
+import { useEffect } from 'react';
+import {
+  Route, Switch
+} from "react-router-dom";
+import productApi from './API/productApi';
+import NotFound from './components/NotFound';
+import './index.css';
 
-function App() {
+const App = () => {
+
+  useEffect(() => {
+    const fetchProduct = async () => {
+      const params = {
+        _limit: 10,
+      }
+      const productList = await productApi.getAll(params)
+      console.log(productList)
+    }
+    fetchProduct()
+  }, [])
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Pham Hoang DOng
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+      <Switch>
+        <Route path="/trang-chu.html" component={XHomePage} exact />
+        <Route path="/gioi-thieu.html" component={AboutPage} exact />
+        <Route path="/lien-he.html" component={ContactPage} exact />
+        {/* <Route path="/todos" component={TodoFeature} exact />
+        <Route path="/albums" component={AlbumFeature} exact /> */}
+        <Route component={NotFound} />
+      </Switch>
+    </div >
   );
 }
 
