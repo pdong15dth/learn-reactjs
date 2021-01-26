@@ -1,6 +1,7 @@
 // import './App.css';
 import AboutPage from 'features/AboutPage';
 import ContactPage from 'features/ContactPage';
+import QuestionPage from 'features/QuestionPage';
 import XHomePage from 'features/XHomePage';
 import { useEffect } from 'react';
 import {
@@ -22,14 +23,35 @@ const App = () => {
     }
     fetchProduct()
   }, [])
+  const arrRouter = [
+    {
+      path: '/',
+      component: XHomePage,
+      isExact: true
+    },
+    {
+      path: '/gioi-thieu',
+      component: AboutPage,
+      isExact: true
+    },
+    {
+      path: '/on-thi',
+      component: QuestionPage,
+      isExact: true
+    },
+    {
+      path: '/lien-he',
+      component: ContactPage,
+      isExact: true
+    },
+  ]
+  const renderRouter = (arrRouter) => {
+    return arrRouter.map((item, index) => <Route path={item.path} component={item.component} exact={item.isExact} key={index} />)
+  }
   return (
     <div className="App">
       <Switch>
-        <Route path="/trang-chu.html" component={XHomePage} exact />
-        <Route path="/gioi-thieu.html" component={AboutPage} exact />
-        <Route path="/lien-he.html" component={ContactPage} exact />
-        {/* <Route path="/todos" component={TodoFeature} exact />
-        <Route path="/albums" component={AlbumFeature} exact /> */}
+        {renderRouter(arrRouter)}
         <Route component={NotFound} />
       </Switch>
     </div >

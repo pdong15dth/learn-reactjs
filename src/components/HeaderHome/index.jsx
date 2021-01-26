@@ -1,5 +1,6 @@
 import React from 'react';
-
+import { Link } from 'react-router-dom';
+import './styles.scss'
 HeaderHome.propTypes = {
 
 };
@@ -31,30 +32,28 @@ function HeaderHome(props) {
                             >
                                 <ul class="navbar-nav">
                                     <li class="nav-item">
-                                        <a href="trang-chu.html" class="nav-link active"
-                                        >Trang Chủ
-                  </a>
+                                        <Link to="/" class="nav-link active">Trang Chủ</Link>
                                     </li>
                                     <li class="nav-item">
-                                        <a href="gioi-thieu.html" class="nav-link">Giới Thiệu </a>
+                                        <Link to="gioi-thieu" class="nav-link">Giới Thiệu </Link>
                                     </li>
                                     <li class="nav-item">
-                                        <a href="#" class="nav-link">Thông Tin </a>
+                                        <Link to='#' class="nav-link">Thông Tin </Link>
                                     </li>
                                     <li class="nav-item">
-                                        <a href="#" class="nav-link">Đào Tạo </a>
+                                        <Link to='#' class="nav-link">Đào Tạo </Link>
                                     </li>
                                     <li class="nav-item">
-                                        <a href="#" class="nav-link">Tin Tức </a>
+                                        <Link to='#' class="nav-link">Tin Tức </Link>
                                     </li>
                                     <li class="nav-item">
-                                        <a href="#" class="nav-link">Ôn Thi </a>
+                                        <Link to="on-thi" class="nav-link">Ôn Thi </Link>
                                     </li>
                                     <li class="nav-item">
-                                        <a href="#" class="nav-link">Lưu Ý </a>
+                                        <Link to='#' class="nav-link">Lưu Ý </Link>
                                     </li>
                                     <li class="nav-item">
-                                        <a href="lien-he.html" class="nav-link">Liên Hệ</a>
+                                        <Link to="lien-he" class="nav-link">Liên Hệ</Link>
                                     </li>
                                 </ul>
                                 <div class="others-options">

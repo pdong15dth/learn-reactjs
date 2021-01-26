@@ -1,9 +1,8 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import HeaderOrther from 'components/HeaderOrther';
+import HeaderHome from 'components/HeaderHome';
 import TitleCategory from 'components/TitleCategory';
-import AboutContent from './AboutContent';
 import XFooter from 'components/XFooter';
+import React from 'react';
+import AboutContent from './AboutContent';
 
 AboutPage.propTypes = {
 
@@ -12,7 +11,7 @@ AboutPage.propTypes = {
 function AboutPage(props) {
     return (
         <div>
-            <HeaderOrther></HeaderOrther>
+            <HeaderHome></HeaderHome>
             <TitleCategory title="Giới thiệu"></TitleCategory>
             <AboutContent></AboutContent>
             <XFooter></XFooter>

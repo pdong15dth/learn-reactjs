@@ -29,30 +29,29 @@ function HeaderOrther(props) {
                             <div class="collapse navbar-collapse mean-menu" id="navbarSupportedContent">
                                 <ul class="navbar-nav">
                                     <li class="nav-item">
-                                        <Link to='trang-chu.html' className='nav-link'>Trang Chủ</Link>
+                                        <Link to='/' className='nav-link'>Trang Chủ</Link>
                                     </li>
                                     <li class="nav-item">
-                                        <Link to='gioi-thieu.html' className='nav-link'>Giới Thiệu</Link>
+                                        <Link to='gioi-thieu' className='nav-link'>Giới Thiệu</Link>
                                         {/* <a href="gioi-thieu.html" class="nav-link">Giới Thiệu</a> */}
                                     </li>
                                     <li class="nav-item">
-                                        <a href="#" class="nav-link">Thông Tin</a>
+                                        <Link to='#' class="nav-link">Thông Tin</Link>
                                     </li>
                                     <li class="nav-item">
-                                        <a href="#" class="nav-link">Đào Tạo</a>
+                                        <Link to='#' class="nav-link">Đào Tạo</Link>
                                     </li>
                                     <li class="nav-item">
-                                        <a href="#" class="nav-link">Tin Tức</a>
+                                        <Link to='#' class="nav-link">Tin Tức</Link>
                                     </li>
                                     <li class="nav-item">
-                                        <a href="#" class="nav-link">Ôn Thi</a>
+                                        <Link to='#' class="nav-link">Ôn Thi</Link>
                                     </li>
                                     <li class="nav-item">
-                                        <a href="#" class="nav-link">Lưu Ý</a>
+                                        <Link to='#' class="nav-link">Lưu Ý</Link>
                                     </li>
                                     <li class="nav-item">
                                         <Link to='lien-he.html' className='nav-link active'>Liên Hệ</Link>
-                                        {/* <a href="lien-he.html" class="nav-link active">Liên Hệ</a> */}
                                     </li>
                                 </ul>
                                 <div class="others-options">

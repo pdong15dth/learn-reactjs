@@ -1,10 +1,9 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import HeaderOrther from 'components/HeaderOrther';
+import HeaderHome from 'components/HeaderHome';
 import TitleCategory from 'components/TitleCategory';
+import XFooter from 'components/XFooter';
+import React from 'react';
 import Contact from './Contact';
 import Maps from './Maps';
-import XFooter from 'components/XFooter';
 
 ContactPage.propTypes = {
 
@@ -13,7 +12,7 @@ ContactPage.propTypes = {
 function ContactPage(props) {
     return (
         <div>
-            <HeaderOrther></HeaderOrther>
+            <HeaderHome></HeaderHome>
             <TitleCategory title="Liên Hệ"></TitleCategory>
             <Contact></Contact>
             <Maps></Maps>

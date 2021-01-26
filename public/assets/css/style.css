@@ -5139,11 +5139,11 @@ blockquote::before,
     font-weight: 600;
 }
 .order-details .payment-box {
-    background-color: #fff;
-    -webkit-box-shadow: 0 2px 28px 0 rgba(0, 0, 0, 0.06);
-    box-shadow: 0 2px 28px 0 rgba(0, 0, 0, 0.06);
-    margin-top: 30px;
-    padding: 30px;
+    /* background-color: #fff; */
+    /* -webkit-box-shadow: 0 2px 28px 0 rgba(0, 0, 0, 0.06); */
+    /* box-shadow: 0 2px 28px 0 rgba(0, 0, 0, 0.06); */
+    /* margin-top: 30px; */
+    /* padding: 30px; */
 }
 .order-details .payment-box .payment-method p {
     font-size: 14px;
