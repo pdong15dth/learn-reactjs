@@ -4,6 +4,7 @@ import { useForm } from 'react-hook-form';
 import * as yup from "yup";
 import { yupResolver } from '@hookform/resolvers/yup';
 import InputField from 'features/Todo/components/form-control/inputField';
+import TextAreaField from 'features/Todo/components/form-control/TextAreaField';
 ContactForm.propTypes = {
 
 };
@@ -11,33 +12,35 @@ ContactForm.propTypes = {
 function ContactForm(props) {
     const schema = yup.object().shape({
         fullName: yup.string()
-            .required('Please enter your full name')
-            .test('nhap it nhan 2 tu', 'Vui long nhap it nhat 2 tu', (values) => {
+            .required('Vui lòng nhập đầy đủ Họ & Tên.')
+            .test('Ít nhất phải có 2 từ.', 'Ít nhất phải có 2 từ.', (values) => {
                 return values.split(' ').length >= 2
             }),
         email: yup.string()
             .required('Please enter your Email')
-            .email('Vui long nhap dung dia chi Email'),
-        password: yup.string()
-            .required('Please enter your Password')
-            .min(6, 'It nhat 6 ky tu nha ban'),
-        retypepassword: yup.string()
-            .required('Please enter your full name')
-            .oneOf([yup.ref('password')], 'Password khong trung khop'),
+            .email('Vui lòng nhập địa chỉ Email'),
+        phone: yup.string()
+            .required('Vui lòng nhập số điện thoại.'),
+        subject: yup.string()
+            .required('Vui lòng nhập tiêu đề.'),
+        message: yup.string()
+            .required('Vui lòng nhập tin nhắn bạn muốn gửi.'),
     });
 
     const form = useForm({
         defaultValues: {
             fullName: '',
             email: '',
-            password: '',
-            retypepassword: ''
+            phone: '',
+            subject: '',
+            message: ''
         },
         resolver: yupResolver(schema)
     });
 
     const handleSubmit = (values) => {
         const { onSubmit } = props
+        console.log("doongph3")
         if (onSubmit) {
             onSubmit(values)
         }
@@ -45,7 +48,7 @@ function ContactForm(props) {
     };
 
     return (
-        <form id="contactForm" onSubmit={form.handleSubmit(handleSubmit)}>
+        <form id="contactForm" >
             <div class="row">
                 <div class="col-lg-6 col-md-6">
                     <div class="form-group">
@@ -82,14 +85,17 @@ function ContactForm(props) {
                 </div>
                 <div class="col-lg-12 col-md-12">
                     <div class="form-group">
-                        <textarea name="message" class="form-control" id="message" cols="30" rows="5"
+                        {/* <textarea name="message" class="form-control" id="message" cols="30" rows="5"
                             required data-error="Write your message"
-                            placeholder="Your Message"></textarea>
+                            placeholder="Your Message"></textarea> */}
+                        <TextAreaField name="message" className="form-control" id="message" cols="30" rows="5"
+                            required data-error="Write your message"
+                            placeholder="Your Message" form={form} placeholder="Message"></TextAreaField>
                         <div class="help-block with-errors"></div>
                     </div>
                 </div>
                 <div class="col-lg-12 col-md-12">
-                    <button type="submit" class="btn btn-primary">
+                    <button type="submit" class="btn btn-primary" onClick={form.handleSubmit(handleSubmit)}>
                         GỬI LIÊN HỆ
         </button>
                     <div id="msgSubmit" class="h3 text-center hidden"></div>
